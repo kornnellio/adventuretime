@@ -110,8 +110,7 @@ const VoucherPurchaseSchema = new Schema<IVoucherPurchase>(
 
 // Index for faster queries
 VoucherPurchaseSchema.index({ userId: 1 });
-VoucherPurchaseSchema.index({ orderId: 1 });
 VoucherPurchaseSchema.index({ status: 1 });
-VoucherPurchaseSchema.index({ generatedCouponCode: 1 });
+// Note: orderId and generatedCouponCode already have indexes via unique: true
 
 export default models.VoucherPurchase || model<IVoucherPurchase>('VoucherPurchase', VoucherPurchaseSchema); 

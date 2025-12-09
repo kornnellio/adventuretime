@@ -16,8 +16,19 @@ const nextConfig: NextConfig = {
         hostname: 'adventure-time.ro',
         pathname: '/uploads/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.pravatar.cc',
+      },
+      {
+        protocol: 'https',
+        hostname: 'placehold.co',
+      },
     ],
-    domains: ['images.unsplash.com', 'i.pravatar.cc', 'placehold.co'],
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",

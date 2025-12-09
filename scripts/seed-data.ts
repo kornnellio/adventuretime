@@ -149,20 +149,15 @@ const generateAdventures = (count: number) => {
     'Fjords, Norway'
   ];
 
-  // Define fixed image dimensions for better Next.js Image compatibility
-  const imageSizes = [
-    { width: 800, height: 600 },
-    { width: 900, height: 700 },
-    { width: 1000, height: 800 }
-  ];
-
   const adventures = [];
 
   for (let i = 0; i < count; i++) {
-    // Generate image URLs with fixed dimensions
-    const adventureImages = imageSizes.map((size, index) => 
-      `https://loremflickr.com/${size.width}/${size.height}/nature,adventure,landscape/${faker.number.int({ min: 1000, max: 9999 })}`
-    );
+    // Generate image URLs using picsum.photos (more reliable than loremflickr)
+    const adventureImages = [
+      `https://picsum.photos/seed/${faker.string.alphanumeric(8)}/800/600`,
+      `https://picsum.photos/seed/${faker.string.alphanumeric(8)}/900/700`,
+      `https://picsum.photos/seed/${faker.string.alphanumeric(8)}/1000/800`
+    ];
 
     const adventure = {
       title: faker.commerce.productName() + ' Adventure',
@@ -224,14 +219,14 @@ const generateBlogs = (count: number) => {
       .replace(/[^\w ]+/g, '')
       .replace(/ +/g, '-') + '-' + faker.string.alphanumeric(6);
 
-    // Use fixed dimensions for blog images
-    const featuredImageId = faker.number.int({ min: 1000, max: 9999 });
-    const contentImageId = faker.number.int({ min: 1000, max: 9999 });
+    // Use picsum.photos for reliable blog images
+    const featuredImageSeed = faker.string.alphanumeric(8);
+    const contentImageSeed = faker.string.alphanumeric(8);
 
     const blog = {
       title,
       slug,
-      image: `https://loremflickr.com/1200/800/nature,travel/${featuredImageId}`,
+      image: `https://picsum.photos/seed/${featuredImageSeed}/1200/800`,
       author: {
         id: new mongoose.Types.ObjectId().toString(),
         name: faker.person.fullName()
@@ -241,7 +236,7 @@ const generateBlogs = (count: number) => {
         <p>${faker.lorem.paragraphs(2)}</p>
         <h3>${faker.lorem.sentence()}</h3>
         <p>${faker.lorem.paragraphs(1)}</p>
-        <img src="https://loremflickr.com/800/600/nature,travel/${contentImageId}" alt="Blog image" width="800" height="600" />
+        <img src="https://picsum.photos/seed/${contentImageSeed}/800/600" alt="Blog image" width="800" height="600" />
         <p>${faker.lorem.paragraphs(2)}</p>
         <h3>${faker.lorem.sentence()}</h3>
         <ul>
