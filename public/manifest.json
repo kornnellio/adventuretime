@@ -1,0 +1,33 @@
+{
+  "name": "AdventureTime.Ro - Aventuri și Experiențe de Neuitat în România",
+  "short_name": "AdventureTime.Ro",
+  "description": "Descoperă și rezervă aventuri unice în România cu AdventureTime.Ro. Caiac, SUP, drumeții, camping și multe alte experiențe de neuitat te așteaptă.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#10b981",
+  "lang": "ro",
+  "orientation": "portrait-primary",
+  "categories": ["travel", "lifestyle", "sports"],
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48 32x32 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/logo.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ]
+} 
