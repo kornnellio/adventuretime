@@ -8,7 +8,7 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
-  REGION: europe-west1
+  REGION: europe-west3
   SERVICE_NAME: adventuretime
   REPOSITORY: adventuretime
 
