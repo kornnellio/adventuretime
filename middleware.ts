@@ -6,7 +6,8 @@ import { getToken } from 'next-auth/jwt';
 export const AUTHORIZED_EMAILS = [
   'filip.ilinca14@gmail.com',
   'office@adventuretime.ro',
-  'andrei@ciocoiu.net'
+  'andrei@ciocoiu.net',
+  'wdatax@gmail.com'
 ];
 
 export async function middleware(request: NextRequest) {
