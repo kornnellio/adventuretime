@@ -5,8 +5,8 @@ import crypto from "crypto";
 import sharp from "sharp";
 
 // Configuration
-const UPLOAD_DIR = process.env.UPLOAD_DIR || "/var/www/ia_caiace_uploads";
-const UPLOAD_PREFIX = process.env.UPLOAD_URL_PREFIX || "/uploads";
+const UPLOAD_DIR = process.env.UPLOAD_DIR || "/tmp/uploads";
+const UPLOAD_PREFIX = process.env.UPLOAD_URL_PREFIX || "/api/uploads";
 const MAX_FILE_SIZE = 30 * 1024 * 1024; // 30MB
 const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp"];
 const MAX_WIDTH = 1920;
