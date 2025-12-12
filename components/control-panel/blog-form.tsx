@@ -223,9 +223,9 @@ export default function BlogForm({ blog, currentUser, isEditing = false }: BlogF
                             plugins: [
                               'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
                               'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
-                              'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount',
-                              'emoticons', 'template', 'paste', 'importcss', 'autosave', 'directionality',
-                              'nonbreaking', 'pagebreak', 'quickbars', 'save', 'hr'
+                              'insertdatetime', 'media', 'table', 'help', 'wordcount',
+                              'emoticons', 'importcss', 'autosave', 'directionality',
+                              'nonbreaking', 'pagebreak', 'quickbars', 'save'
                             ],
                             toolbar:
                               'undo redo | blocks | ' +
