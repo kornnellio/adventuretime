@@ -20,6 +20,7 @@ import {
 import { Pencil, Plus } from 'lucide-react';
 import DeleteAdventureCategoryButton from '@/components/control-panel/delete-adventure-category-button';
 import Image from 'next/image';
+import { formatImageUrl } from '@/lib/utils';
 
 export const metadata = {
   title: 'Manage Adventure Categories - AdventureTime.Ro',
@@ -73,7 +74,7 @@ export default async function AdventureCategoriesPage() {
                     <TableCell>
                       <div className="relative w-16 h-16 rounded-md overflow-hidden">
                         <Image
-                          src={category.image}
+                          src={formatImageUrl(category.image)}
                           alt={category.title}
                           fill
                           className="object-cover"

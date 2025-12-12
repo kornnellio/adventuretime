@@ -3,6 +3,7 @@ import { AdventureCard } from '@/components/adventures/adventure-card';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import Image from "next/image";
+import { formatImageUrl } from '@/lib/utils';
 
 type SuccessResult = {
     success: true;
@@ -67,11 +68,10 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
                 <div className="relative h-64 md:h-96 rounded-lg overflow-hidden mb-8">
                     {category.image && (
                         <Image
-                            src={category.image}
+                            src={formatImageUrl(category.image)}
                             alt={category.title}
-                            layout="fill"
-                            objectFit="cover"
-                            className="absolute inset-0"
+                            fill
+                            className="absolute inset-0 object-cover"
                         />
                     )}
                     <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center text-white p-4">

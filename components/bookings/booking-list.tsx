@@ -1,10 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent } from '../ui/card';
-import { cn } from '@/lib/utils';
+import { cn, formatImageUrl, normalizeStatus } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
 import { CreditCard, Clock } from 'lucide-react';
-import { normalizeStatus } from '@/lib/utils';
 
 interface BookingProps {
   destination: string;
@@ -86,11 +85,7 @@ export function BookingList({
               <CardContent className="p-2 sm:p-3 flex items-center gap-2 sm:gap-3">
                 <div className="relative h-10 w-10 sm:h-12 sm:w-12 rounded-lg overflow-hidden flex-shrink-0">
                   <Image
-                    src={
-                      booking.imageUrl.startsWith('http')
-                        ? booking.imageUrl
-                        : `https://adventure-time.ro${booking.imageUrl}`
-                    }
+                    src={formatImageUrl(booking.imageUrl)}
                     alt={booking.destination}
                     fill
                     className="object-cover"
