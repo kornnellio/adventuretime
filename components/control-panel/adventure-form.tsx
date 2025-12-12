@@ -936,7 +936,7 @@ export default function AdventureForm({ adventure, isEditing = false }: Adventur
                           'link', 'lists', 'autoresize', 'autolink', 'image', 'charmap',
                           'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
                           'insertdatetime', 'media', 'table', 'help', 'wordcount',
-                          'emoticons', 'hr'
+                          'emoticons'
                         ],
                         toolbar:
                           'undo redo | blocks | ' +
@@ -1032,7 +1032,7 @@ export default function AdventureForm({ adventure, isEditing = false }: Adventur
                           'link', 'lists', 'autoresize', 'autolink', 'image', 'charmap',
                           'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
                           'insertdatetime', 'media', 'table', 'help', 'wordcount',
-                          'emoticons', 'hr'
+                          'emoticons'
                         ],
                         toolbar:
                           'undo redo | blocks | ' +
