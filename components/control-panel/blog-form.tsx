@@ -238,8 +238,23 @@ export default function BlogForm({ blog, currentUser, isEditing = false }: BlogF
                             image_advtab: true,
                             file_picker_types: 'image',
                             automatic_uploads: true,
-                            images_upload_url: '/api/upload',
                             images_reuse_filename: true,
+                            images_upload_handler: async (blobInfo: any) => {
+                              const formData = new FormData();
+                              formData.append('file', blobInfo.blob(), blobInfo.filename());
+
+                              const response = await fetch('/api/upload', {
+                                method: 'POST',
+                                body: formData,
+                              });
+
+                              if (!response.ok) {
+                                throw new Error('Upload failed');
+                              }
+
+                              const data = await response.json();
+                              return data.location || data.url;
+                            },
                             directionality: 'ltr',
                             setup: (editor) => {
                               // Use a custom object to store selection state
